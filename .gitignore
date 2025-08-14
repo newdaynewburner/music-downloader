@@ -1,0 +1,8 @@
+# Project
+*.mp3
+*.m4a
+*.mp4
+
+# Python
+*.pyc
+__pycache__/
