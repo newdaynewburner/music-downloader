@@ -30,9 +30,8 @@ def main(debug, config, graphical_mode):
     # Initialize a new DownloadManager object
     download_manager = DownloadManager(debug, config)
 
-    # If the program is being run in graphical mode, launch the GUI
-    if graphical_mode is True:
-        gui = GUI(download_manager)
+    # Launch the GUI
+    gui = GUI(download_manager)
 
     return None
 
@@ -40,14 +39,13 @@ def main(debug, config, graphical_mode):
 if __name__ == "__main__":
      # Parse command line arguments
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hdc:g", ["help", "debug", "config=", "graphical-mode"])
+        opts, args = getopt.getopt(sys.argv[1:], "hdc:", ["help", "debug", "config="])
     except getopt.GetoptError as err_msg:
         print(err_msg)
         sys.exit(1)
 
     debug = False
     config_file = "config/music-downloader.conf"
-    graphical_mode = False
 
     for opt, arg in opts:
         if opt in ("-h", "--help"):
@@ -69,10 +67,6 @@ if __name__ == "__main__":
             else:
                 print("Error! Specified configuration file does not exist! Check the filepath and try again!")
                 sys.exit(1)
-
-        elif opt in ("-g", "--graphical-mode"):
-            # Specify to launch the program in graphical mode
-            graphical_mode = True
 
     # Read the configuration file
     config = configparser.ConfigParser()
