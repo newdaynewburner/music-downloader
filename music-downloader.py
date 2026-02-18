@@ -73,4 +73,4 @@ if __name__ == "__main__":
     config.read(config_file)
 
     # main function
-    main(debug, config, graphical_mode)
+    main(debug, config)
