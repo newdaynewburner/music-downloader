@@ -15,14 +15,13 @@ import configparser
 from lib.download import DownloadManager
 from lib.interface import GUI
 
-def main(debug, config, graphical_mode):
+def main(debug, config):
     """ Main function, contains core program logic
 
     Arguments:
         debug - boolean - Enables/disables debugging output
         config - ConfigParser object - Readable configuration file data
-        graphical_mode - boolean - If true, launches the GUI
-
+       
     Returns:
         None
     """
